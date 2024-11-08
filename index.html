@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="Icon.png" rel="Icon" />
+  </head>
+  <body>
+    <h1 style="color: black">Dynamic Resume Builder</h1>
+
+    <!-- Form for Input -->
+    <form id="resume-form">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+
+        <label for="phone">Phone:</label>
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Enter your phone number"
+          required
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Profile Picture</legend>
+        <label for="profile-picture">Upload Profile Picture:</label>
+        <input type="file" id="profile-picture" accept="image/*" required />
+      </fieldset>
+
+      <fieldset>
+        <legend>Education</legend>
+        <label for="education">Education:</label>
+        <textarea
+          id="education"
+          placeholder="Enter your education"
+          rows="4"
+          required
+        ></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Experience</legend>
+        <label for="experience">Experience:</label>
+        <textarea
+          id="experience"
+          placeholder="Enter your work experience"
+          rows="4"
+          required
+        ></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Skills</legend>
+        <label for="skills">Skills:</label>
+        <textarea
+          id="skills"
+          placeholder="Enter your skills"
+          rows="4"
+          required
+        ></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Career Objective</legend>
+        <label for="career-objective">Career Objective:</label>
+        <textarea
+          id="career-objective"
+          placeholder="Enter your career objective"
+          rows="4"
+          required
+        ></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Certifications</legend>
+        <label for="certifications">Certifications:</label>
+        <textarea
+          id="certifications"
+          placeholder="Enter your certifications, separated by commas"
+          rows="4"
+          required
+        ></textarea>
+      </fieldset>
+
+      <button type="submit"><b>Generate Resume</b></button>
+    </form>
+
+    <br />
+    <br />
+    <!-- Dynamic Resume Display Area -->
+    <div id="resume-display" class="resume-container" style="display: none; margin-top: 50px;" contenteditable="true">
+      <div class="left-section">
+        <img
+          id="profile-picture-display"
+          alt="Profile Picture"
+          class="profile-picture"
+        />
+        <section id="objective">
+          <h3 style="color: white; box-shadow: 0 0 15px yellow">
+            Career objective
+          </h3>
+          <p id="display-career-objective"></p>
+        </section>
+
+        <section id="certifications-section">
+          <h3 style="color: white; box-shadow: 0 0 15px yellow">
+            Certifications
+          </h3>
+          <p id="display-certifications"></p>
+        </section>
+      </div>
+      <div class="right-section">
+        <h1 id="resume-name">Your Name</h1>
+        <section id="personal-info">
+          <h3>Personal Information:</h3>
+          <p><b>Name:</b> <span id="display-name"></span></p>
+          <p><b>Phone:</b> <span id="display-phone"></span></p>
+          <p>
+            <b>Email:</b> <a href="#" id="display-email">email@example.com</a>
+          </p>
+        </section>
+        <section id="education-section">
+          <h3>Education:</h3>
+          <p id="display-education"></p>
+        </section>
+        <section id="experience-section">
+          <h3>Experience:</h3>
+          <p id="display-experience"></p>
+        </section>
+        <section id="skills-section">
+          <h3>Skills:</h3>
+          <ul id="display-skills"></ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
